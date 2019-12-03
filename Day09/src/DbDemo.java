@@ -63,11 +63,6 @@ public class DbDemo {
 		finally {
 			con.close();
 		}
-			
-			
-			
-		
-		
 		
 		
 	}
