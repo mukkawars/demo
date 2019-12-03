@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>PHP Registration form</title>
+<title>PHP Registration</title>
 </head>
 
 <body style=color "lavender">
@@ -15,6 +15,7 @@ $udob=$_REQUEST["txtdob"];
 $ugen=$_REQUEST["rdogender"];
 $uage=$_REQUEST["Agename"];
 $uprofile =$_REQUEST["profile"];
+
 
 setcookie("cname",$uname,time()+3600);
 setcookie("cemail",$umail,time()+3600);
