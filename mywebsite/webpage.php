@@ -1,0 +1,167 @@
+<html>
+<head>
+
+<title>Registration Page</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+#menu{
+float:left;
+
+}
+
+a.menulink{
+color:white;
+
+}
+
+a:visited
+{
+	background-color:white;
+}
+
+a:hover
+{
+	font-size:20px;
+}
+
+<!--
+.parent{
+
+
+border:1px solid blue;
+text-align:center;
+color:aqua;
+}
+
+tr:hover {
+background-color:#313131;
+}
+
+a.hover, 
+a.active {
+  color:red;
+}
+
+a.hover, 
+a.active {
+  font-size:150%;
+}
+ -->
+ 
+</style></head>
+<body background="img\d.jpg.jpg">
+
+<?php
+$errmessage ="";
+if(isset($_REQUEST["flag"]))
+{
+	$errmessage =  "Username or Password incorrect";
+}
+else
+{
+	$errmessage ="";
+}
+	
+?>
+
+
+<table 
+align="center"
+border="0"
+height="10"
+width="500"
+bgcolor="transparent">
+
+<tr>
+<td colspan="10">
+<a href="https://localhost/mywebsite/webpage.htm">
+<div class="parent" >
+Home
+
+</div>
+</div>
+</td>
+
+
+<td colspan="10">
+<a href="https://localhost/mywebsite/product.htm">
+<div class="parent">
+Product
+</div>
+</td>
+
+<td colspan="10">
+<a href="https://localhost/mywebsite/signupform.htm">
+<div class ="parent">
+Signup
+</div>
+</td>
+
+<td colspan="10">
+<a href="https://localhost/mywebsite/feedback.htm">
+<div class="parent">
+FeedBack
+</div>
+</td>
+</tr>
+
+<form action="mylogin.php">
+<table 
+align="bottom"
+
+border="0"
+bgcolor="transparent" >
+
+<tr>
+<td colspan="2">
+<font color="red"> 
+SIGN IN MENU
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<font color="white"> 
+Username
+<input type="Text" name ="txtname"
+placeholder="Enter username" autofocus required
+maxlength=10 >
+
+</td>
+</tr>
+
+<tr>
+<th colspan="2">
+<font color="white"> 
+password
+<input type="password" name ="txtpass"
+placeholder="Enter password" >
+</th>
+</tr>
+
+<tr>
+<td align="right"> 
+
+<button class="btn btn-danger" type="submit" align="left">Login</button>
+
+
+</td>
+<td>
+<a href="https://localhost/mywebsite/signupform.htm">
+<button class="btn btn-danger" type="reset" align="right" >New User</button>
+
+<!--<input type="submit" value="New user"/> -->
+</td>
+</tr>
+
+</table>
+
+
+
+</table>
+</form>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,245 @@
+<html>
+<head>
+
+<title> REGISTRATION FORM</title>
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+input,textarea{
+background-color:black;
+font color="white";
+color:white;
+border-radius:10px;
+}
+
+tr:nth-child(even){
+background-color:#FAF0E6;
+color:DC143C;
+}
+
+tr:hover {
+background-color:FFF0F5;
+}
+
+table 
+{
+	border:0px
+}
+th,td{
+
+border-bottom : 1px solid white;
+}
+
+</style>
+
+<script>
+
+function validate()
+{
+	if(!chkusername() || !validatepass())
+	{
+		alert("CHECK FOR ERRORS");
+		return false;
+	}
+	else
+	return true;
+}
+
+
+function chkusername()
+{
+	var uname = document.getElementById("userID").value;
+	if(uname == "" || uname.length<5)
+	{
+		alert("Username is blank or less then 5 characters");
+		return false;
+	}
+	else
+	return true;
+
+}
+
+function validatepass()
+{
+	errmsg="";
+	var cpass = document.getElementById("cpassw").value;
+	var pass = document.getElementById("passw").value;
+
+	if(pass!=cpass)
+	{
+		alert("Password and re-enter password incorrect");
+		//errmsg = "Password and Re-typed password are not matching";
+		document.getElementById("errp").innerHTML = errmsg;
+		return false;
+	}
+	else
+	{
+		document.getElementById("errp").innerHTML = errmsg;
+		return true;
+	}
+	
+}
+function chkmobno()
+{
+	var q = document.getElementById("mobno").value;
+	
+	if(q == "" || q.length<10)
+	{
+		q=prompt("Enter valid mobile number");
+		document.getElementById("mobno").value=q;
+		//alert("Some Numbers are missing");
+		
+		return false;
+	}
+	else
+	return true;
+
+}
+function ValidateEmail()
+{
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(inputText.value.match(mailformat)) 
+	{
+		//document.form.inputText.focus();
+		return true;
+		alert("You have entered an invalid email address!");
+	}
+	else
+	{
+		
+		//document.form.inputText.focus();
+		return false;
+	}
+}
+
+     
+   /*      
+		function validateEmail(emailID) {
+		 var emailID;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos < 1 || ( dotpos - atpos < 2 )) {
+               document.write("Please enter correct email ID")
+               document.myForm.EMail.focus() ;
+               return false;
+			   alert("You have entered an invalid email address!");
+
+			   
+            }
+			
+            return( true );
+         }
+         //document.write(validateEmail("abc@gm.ail.com"));
+  
+*/
+</script>
+
+
+
+
+
+<body background = "img\qqqq.jpg" style="background-size:1700px 1000px">
+
+
+<form action="check.php" method="get" onsubmit="return validate()">
+
+<table border=1 cellpadding=5 cellspacing=0 align="left" bgcolor="transparent">
+
+<tr>
+<th><font color="red">SignUp form </th>
+
+</tr>
+<br>
+<br>
+
+<tr>
+<th>UserName</th>
+<td><input type="text" name="txtname" id="userID" onblur="chkusername()" placeholder="Enter Username" autofocus required ></td>
+</tr>
+
+
+
+<tr>
+<th>Password</th>
+<td><input type ="password" name="txtpass" id="passw" maxlength="12"  placeholder="Enter password"></td><div id="errp"></div>
+</tr>
+
+
+
+<tr>
+<th>RE ENTER password</th>
+<td><input type="password" name="Enterpassword" maxlength="12" id="cpassw" placeholder="Re-enterpassword" onblur="validatepass()">
+</td>
+</tr>
+
+<tr>
+<th>Email</th>
+<td><input type="email" name="Emailenter" placeholder="enter email" id="EmailID" onchange="ValidateEmail()"> 
+</td>
+</tr>
+
+<tr>
+<th>
+Mobile
+</th>
+<td>
+<input type="tele" name="mobile" maxlength="10" id="mobno" onblur="chkmobno()"
+ autofocus 
+placeholder = "Enter Mobile" align="center" 
+/>
+</td>
+</tr>
+
+<tr>
+<th>DOB</th>
+<td><input type="date" name="txtdob"</td>
+</tr>
+
+<tr>
+<th>
+Gender
+</th>
+<td>
+<input type="radio" name="rdogender" value="male" checked /> Male
+<input type="radio" name="rdogender" value="Female" /> Female
+<input type="radio" name="rdogender" value="Transgender" /> Transgender
+</td>
+</tr>
+
+
+</tr>
+<tr>
+<th nowrap> Upload Profile Photo </t>
+<td> 
+<input type="file" name="profile"/>
+
+</td>
+</tr>
+
+<tr>
+<th> Age </th>
+<td> 
+18(Yrs)<input type="range" 
+min = "18"
+max="50"
+name="Agename"/>50(Yrs)
+</td>
+</tr>
+
+
+<tr> 
+<td align="right"> 
+<input type="submit" value="Register" onclick="validate()" />
+</td>
+<td> <button type="reset">Clear</button>
+</td>
+</tr>
+
+</table>
+
+
+</form>
+</body>
+</html>
